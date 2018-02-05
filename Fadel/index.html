@@ -1,0 +1,52 @@
+<p id="demo"></p>
+
+<script>
+    var a = 5 ; //variabel bertipe int
+    console.log(a);
+
+    var d = 7.5 ; //variabel bertipe double
+    console.log(d);
+
+    var b = a * d;
+    console.log(b); //perkalian
+
+    var f = a + d;
+    console.log(f); //penambahan
+
+    var g = a - d;
+    console.log(g); //pengurangan
+
+    var h = a / d;
+    console.log(h); //pembagian
+
+
+    var c = 'belajar';
+    console.log(c);
+
+    var e =  (b > 20);
+    console.log(e);
+
+    if(a%2==0){
+        console.log("bilangan genap");
+    } else {
+        console.log("bilangan ganjil");
+    }
+
+    var anggota = new Array ("irhas","pobi");
+    console.log(anggota);
+
+    anggota[2]="putra";
+    anggota[3]="khalid";
+    anggota[4]="adel";
+    anggota[5]="fadel";
+    console.log(anggota);
+
+    var i;
+    for (i=1;i<=10;i++)
+        console.log(i + anggota);
+
+
+    document.getElementById("demo").innerHTML = a + "<br>" + d + "<br>"  + b + "<br>" + c + "<br>" + e + "<br>" + anggota  +"<br>" +i + "<br>" + f + "<br>" + g + "<br>" + h ;
+</script>
+
+
