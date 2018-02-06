@@ -210,8 +210,8 @@ $(document).ready(function(){
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
-      <p></a>
-        Powered by <strong>PUTRA ARIFAH</strong>, Desain With <a href="https://bulma.io/"><strong>BULMA</strong></a>
+      <p>
+        Powered by <strong>PUTRA ARIFAH</strong>, Design With <a href="https://bulma.io/"><strong>BULMA</strong></a>
       </p>
     </div>
   </div>
