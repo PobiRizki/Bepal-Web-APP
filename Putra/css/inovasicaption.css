@@ -1,0 +1,130 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:200);
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+.snip1403 {
+  font-family: 'Titillium Web', Arial, sans-serif;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+  font-size: 16px;
+  background-color: #0c1116;
+  line-height: 1.6em;
+  font-weight: 200;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.snip1403 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s linear;
+  transition: all 0.35s linear;
+}
+.snip1403 *:before,
+.snip1403 *:after {
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.snip1403 img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+}
+.snip1403 figcaption {
+  position: absolute;
+  top: 50%;
+  margin: 0 40px;
+  padding: 10px 15px;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+
+.snip1403 figcaption a{
+color: white
+}
+
+.snip1403 figcaption div {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.7;
+}
+.snip1403 figcaption div:before,
+.snip1403 figcaption div:after {
+  position: absolute;
+  content: '';
+  background-color: rgba(255, 255, 255, 0.75);
+  left: 50%;
+  top: 50%;
+}
+.snip1403 figcaption div:before {
+  width: 1px;
+  height: 50px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.snip1403 figcaption div:after {
+  height: 1px;
+  width: 50px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.snip1403 p {
+  opacity: 0;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.snip1403 a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.snip1403:hover img,
+.snip1403.hover img {
+  zoom: 1;
+  filter: alpha(opacity=15);
+  -webkit-opacity: 0.15;
+  opacity: 0.15;
+}
+.snip1403:hover figcaption p,
+.snip1403.hover figcaption p {
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+  opacity: 1;
+}
+.snip1403:hover figcaption .plus1,
+.snip1403.hover figcaption .plus1,
+.snip1403:hover figcaption .plus2,
+.snip1403.hover figcaption .plus2 {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+}
+.snip1403:hover figcaption .plus1:before,
+.snip1403.hover figcaption .plus1:before,
+.snip1403:hover figcaption .plus1:after,
+.snip1403.hover figcaption .plus1:after {
+  top: 0%;
+  left: 0%;
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+.snip1403:hover figcaption .plus2:before,
+.snip1403.hover figcaption .plus2:before,
+.snip1403:hover figcaption .plus2:after,
+.snip1403.hover figcaption .plus2:after {
+  top: 100%;
+  left: 100%;
+  -webkit-transition-delay: 0.35s;
+  transition-delay: 0.35s;
+}
+/* Demo purposes only */
