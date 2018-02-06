@@ -1,9 +1,10 @@
-<htm>
+<html>
 <head>
     <title>PUTRA ARIFAH</title>
     <link rel="stylesheet" href="css/bulma.css">    
     <link rel="stylesheet" href="css/style.css">
     <!--<link rel="stylesheet" href="css/showhide.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <script>
 $(document).ready(function(){
@@ -34,17 +35,16 @@ $(document).ready(function(){
 </head>
     
 <body>
-<div>
-    <center><h1 class="title fontKhusus">Masih Dalam Tahap Pengembangan</h1></center>
-    <center><p>Info Menarik Lainnya Tentang <b><a href="https://dafunda.com/anggota/putra-arifah/">Putra Arifah</a></b></p></center>
-    <center><p>Cek Media Sosialnya</p></center>
-    <center><a href="https://www.instagram.com/putraarifah/"><img src="https://lh3.googleusercontent.com/aYbdIM1abwyVSUZLDKoE0CDZGRhlkpsaPOg9tNnBktUQYsXflwknnOn2Ge1Yr7rImGk=w300" style="width: 30px; height: 30px;"></a>
-    <a href="https://www.youtube.com/channel/UC49xYqEOpF24cKN-WEeIf2Q"><img src="https://cdn1.iconfinder.com/data/icons/iconza-circle-social/64/697037-youtube-512.png" style="width: 30px; height: 30px;"></a>
-    <a href="https://www.facebook.com/putra.arifah14"><img src="https://images.sftcdn.net/images/t_optimized,f_auto/p/8a6eafba-96d2-11e6-b334-00163ec9f5fa/77332936/facebook-logo.png" style="width: 30px; height: 30px;"></a></center>
-</div>  
+    <nav class="nav">
+    <?php
+        include 'header.php';
+    ?>
+    </nav>
+        
+    <div>
+    </div>
 
-
-    <section class="hero is-primary">
+    <section class="hero is-primary" id="latihan">
         <div class="hero-body">
             <div class="container">
                 <div style="float: left">
@@ -208,13 +208,7 @@ $(document).ready(function(){
 </body>
     
 <footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>
-        Powered by <strong>PUTRA ARIFAH</strong>, Design With <a href="https://bulma.io/"><strong>BULMA</strong></a>
-      </p>
-    </div>
-  </div>
+  <?php include 'footer.php' ?>
 </footer>
     
-</htm>
+</html>
