@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Material Dashboard by Creative Tim</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../assets/fonts/material.css" rel="stylesheet" />
+
+</head>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyByyFErKR8T71hN3k5trQII_jQdJu9tD_Y",
+        authDomain: "bepal-fc13c.firebaseapp.com",
+        databaseURL: "https://bepal-fc13c.firebaseio.com",
+        projectId: "bepal-fc13c",
+        storageBucket: "bepal-fc13c.appspot.com",
+        messagingSenderId: "51634596136"
+    };
+    firebase.initializeApp(config);
+</script>
+
+
+<body>
+<div class="wrapper">
+    <div class="sidebar" data-color="purple" data-image="../assets/img/sidebar-1.jpg">
+        <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+    Tip 2: you can also add an image using data-image tag
+-->
+        <div class="logo">
+            <a href="http://www.creative-tim.com" class="simple-text">
+                Bepal Dev
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="">
+                    <a href="../">
+                        <i class="material-icons">person</i>
+                        <p>Member</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="">
+                        <i class="material-icons">book</i>
+                        <p>Course</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+        <nav class="navbar navbar-transparent navbar-absolute">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="material-icons">dashboard</i>
+                                <p class="hidden-lg hidden-md">Dashboard</p>
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="material-icons">notifications</i>
+                                <span class="notification">5</span>
+                                <p class="hidden-lg hidden-md">Notifications</p>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Mike John responded to your email</a>
+                                </li>
+                                <li>
+                                    <a href="#">You have 5 new tasks</a>
+                                </li>
+                                <li>
+                                    <a href="#">You're now friend with Andrew</a>
+                                </li>
+                                <li>
+                                    <a href="#">Another Notification</a>
+                                </li>
+                                <li>
+                                    <a href="#">Another One</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="material-icons">person</i>
+                                <p class="hidden-lg hidden-md">Profile</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group  is-empty">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="material-input"></span>
+                        </div>
+                        <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                            <i class="material-icons">search</i>
+                            <div class="ripple-container"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Task 5</h4>
+                                <p class="category">Learning about Firebase</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">apa itu firebase?</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="typography">
+                                    <div class="row">
+
+                                        <div class="card-content">
+                                            <h2 >Pengertian firebase</h2>
+                                            <blockquote>
+                                                <p>
+                                                    Firebase adalah BaaS (Backend as a Service) yang saat ini dimiliki oleh Google. Firebase ini merupakan solusi yang ditawarkan oleh Google untuk mempermudah pekerjaan Mobile Apps Developer. Dengan adanya Firebase, apps developer bisa fokus mengembangkan aplikasi tanpa harus memberikan effort yang besar untuk urusan backend. So it’s awesome right
+                                                </p>
+                                                <small>
+                                                    <a href="https://coolnetkid.wordpress.com/2016/09/08/android-apa-itu-firebase/">https://coolnetkid.wordpress.com/</a>
+                                                </small>
+                                            </blockquote>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-plain">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Home Work 5</h4>
+                                <p class="category">Integration Firebase</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header" data-background-color="purple">
+                                <h4 class="title">Memulai Menggunakan Firebase</h4>
+                            </div>
+                            <div class="card-content">
+                                <div id="">
+                                    <div class="row">
+
+                                        <div class="card-content">
+                                            <h2 >Tutorial Memulai Menggunakan Firebase</h2>
+                                            <p>pada tutorial di bawah ini merupakan, tutorial Menggunakan Firebase di halaman aplikasi web anda </p>
+                                            <p>
+                                            <h3>1. Kunjungin halaman Firebase</h3>
+                                            anda dapat langsung ke halaman firebase  <a href="https://firebase.google.com/">disini </a>. pilih menu GO TO CONSOLE yang ada pada jendela sebelah kanan atas website firebase untuk masuk ke dalam menu firebase
+                                            <img class="card-img-top" src="../images/firebase-landing-page.png" alt="Card image cap">
+                                            <hr>
+                                            <h3>2. Add Project</h3>
+                                            pilih menu Add project, untuk menambahkan project yang baru anda kerjakan, masukan inputan form yang diminta
+                                            <img class="card-img-top" src="../images/firebase-add-project.png" alt="Card image cap">
+                                            <hr>
+                                            <h3>3. Singkron Firebase ke halaman kerja anda</h3>
+                                            Setelah itu, kita akan di suguhkan tampilan. ingin memulai menggembangkan aplikasi apa. ada 3 pilihan yang di sediakan dari firebase
+                                            ios, android dan web app. klik tambahkan web app. lalu akan muncul pop up seperti di bawah ini.
+                                            <img class="card-img-top" src="../images/firebase-add-web.png" alt="Card image cap">
+                                            <hr>
+                                            <h3>4. Copy Code</h3>
+                                            copy code javascript yang di berikan firebase ke project anda, done. code anda telah tercoordinasi dengan firebase.
+                                            <img class="card-img-top" src="../images/firebase-add-code.png" alt="Card image cap">
+                                            <hr>
+
+                                            </p>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <span class="page-link">Previous</span>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item ">
+                                <a class="page-link" href="2.html">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="3.html">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="2.html">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Company
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Blog
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <p class="copyright pull-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/material.min.js" type="text/javascript"></script>
+<!--  Charts Plugin -->
+<script src="../assets/js/chartist.min.js"></script>
+<!--  Dynamic Elements plugin -->
+<script src="../assets/js/arrive.min.js"></script>
+<!--  PerfectScrollbar Library -->
+<script src="../assets/js/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/bootstrap-notify.js"></script>
+<!--  Google Maps Plugin    -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Material Dashboard javascript methods -->
+<script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/js/demo.js"></script>
+<script type="text/javascript">
+
+
+
+    $(document).ready(function() {
+
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+    });
+
+
+</script>
+
+</html>
