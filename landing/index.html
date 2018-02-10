@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+
+  body {
+    background:#000;
+  }
+
+  #load {
+    position:absolute;
+    width:600px;
+    height:36px;
+    left:50%;
+    top:40%;
+    margin-left:-300px;
+    overflow:visible;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor:default;
+  }
+
+  #load div {
+    position:absolute;
+    width:20px;
+    height:36px;
+    opacity:0;
+    font-family:Helvetica, Arial, sans-serif;
+    animation:move 2s linear infinite;
+    -o-animation:move 2s linear infinite;
+    -moz-animation:move 2s linear infinite;
+    -webkit-animation:move 2s linear infinite;
+    transform:rotate(180deg);
+    -o-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    color:#35C4F0;
+    font-size: 20px;
+  }
+
+  #load div:nth-child(2) {
+    animation-delay:0.2s;
+    -o-animation-delay:0.2s;
+    -moz-animation-delay:0.2s;
+    -webkit-animation-delay:0.2s;
+  }
+  #load div:nth-child(3) {
+    animation-delay:0.4s;
+    -o-animation-delay:0.4s;
+    -webkit-animation-delay:0.4s;
+    -webkit-animation-delay:0.4s;
+  }
+  #load div:nth-child(4) {
+    animation-delay:0.6s;
+    -o-animation-delay:0.6s;
+    -moz-animation-delay:0.6s;
+    -webkit-animation-delay:0.6s;
+  }
+  #load div:nth-child(5) {
+    animation-delay:0.8s;
+    -o-animation-delay:0.8s;
+    -moz-animation-delay:0.8s;
+    -webkit-animation-delay:0.8s;
+  }
+  #load div:nth-child(6) {
+    animation-delay:1s;
+    -o-animation-delay:1s;
+    -moz-animation-delay:1s;
+    -webkit-animation-delay:1s;
+  }
+  #load div:nth-child(7) {
+    animation-delay:1.2s;
+    -o-animation-delay:1.2s;
+    -moz-animation-delay:1.2s;
+    -webkit-animation-delay:1.2s;
+  }
+
+  @keyframes move {
+    0% {
+      left:0;
+      opacity:0;
+    }
+    35% {
+      left: 41%;
+      -moz-transform:rotate(0deg);
+      -webkit-transform:rotate(0deg);
+      -o-transform:rotate(0deg);
+      transform:rotate(0deg);
+      opacity:1;
+    }
+    65% {
+      left:59%;
+      -moz-transform:rotate(0deg);
+      -webkit-transform:rotate(0deg);
+      -o-transform:rotate(0deg);
+      transform:rotate(0deg);
+      opacity:1;
+    }
+    100% {
+      left:100%;
+      -moz-transform:rotate(-180deg);
+      -webkit-transform:rotate(-180deg);
+      -o-transform:rotate(-180deg);
+      transform:rotate(-180deg);
+      opacity:0;
+    }
+  }
+
+  @-moz-keyframes move {
+    0% {
+      left:0;
+      opacity:0;
+    }
+    35% {
+      left:41%;
+      -moz-transform:rotate(0deg);
+      transform:rotate(0deg);
+      opacity:1;
+    }
+    65% {
+      left:59%;
+      -moz-transform:rotate(0deg);
+      transform:rotate(0deg);
+      opacity:1;
+    }
+    100% {
+      left:100%;
+      -moz-transform:rotate(-180deg);
+      transform:rotate(-180deg);
+      opacity:0;
+    }
+  }
+
+  @-webkit-keyframes move {
+    0% {
+      left:0;
+      opacity:0;
+    }
+    35% {
+      left:41%;
+      -webkit-transform:rotate(0deg);
+      transform:rotate(0deg);
+      opacity:1;
+    }
+    65% {
+      left:59%;
+      -webkit-transform:rotate(0deg);
+      transform:rotate(0deg);
+      opacity:1;
+    }
+    100% {
+      left:100%;
+      -webkit-transform:rotate(-180deg);
+      transform:rotate(-180deg);
+      opacity:0;
+    }
+  }
+
+  @-o-keyframes move {
+    0% {
+      left:0;
+      opacity:0;
+    }
+    35% {
+      left:41%;
+      -o-transform:rotate(0deg);
+      transform:rotate(0deg);
+      opacity:1;
+    }
+    65% {
+      left:59%;
+      -o-transform:rotate(0deg);
+      transform:rotate(0deg);
+      opacity:1;
+    }
+    100% {
+      left:100%;
+      -o-transform:rotate(-180deg);
+      transform:rotate(-180deg);
+      opacity:0;
+    }
+  }
+  #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.91);
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  #text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
+
+
+
+</style>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bepal Home Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"> <img src="img/logo.png" height="30" width="100"></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Kelas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong >Bepal</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5" style="color: #ffffff">Mencari Tempat Belajar AntiMainstream Yang Jarang ada Di Mana mana</p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" onclick="tampilinModal()" style="color: #0b0b0b">Join Here</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+        <div id="overlay" onclick="off()">
+        <div id="load">
+            <div>L</div>
+            <div>A</div>
+            <div>P</div>
+            <div>E</div>
+            <div>B</div>
+          </div>
+        </div>
+
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">Kenapa Mereka Memilih Bepal?</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Karena cuman di Bepal anda bisa dapatkan kelas apapun yang belum pernah ada di kota kota besar lainnya</p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Layanan yang akan Bepal berikan kepada kalian</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-user text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Mentor</h3>
+              <p class="text-muted mb-0">Bepal Memilik Mentor yang berkompeten di bidangnya masing masing</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-book text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Materi</h3>
+              <p class="text-muted mb-0">Materi yang sangat menghibur, Mudah di pahami dan Menarik</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-refresh text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Waktu</h3>
+              <p class="text-muted mb-0">Bepal akan memberikan layanan 24 jam kepada anda.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-users text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Pertemanan</h3>
+              <p class="text-muted mb-0">yang pasti punya bepal punya suasanan pertemanan yang harmonis</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">Kelas Yang Tersedia Pada Bepal</h2>
+      </div>
+    </section>
+
+    <section class="p-0" id="portfolio">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+            <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/8.jpeg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/8.jpeg" alt="" >
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                 <!-- <div class="project-category text-faded">
+                    Category
+                  </div>-->
+                  <div class="project-name">
+                    Programing
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Masih Penasaran dengan Bepal?</h2>
+            <hr class="my-4">
+            <p class="mb-5">Hubungi layanan contact service 24 jam kami di bawah ini</p>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-lg-2 ml-auto text-center">
+            <i class="fa fa-facebook fa-3x mb-3 sr-contact" style="color: #4267b2"></i>
+            <p>Bepal Indonesia</p>
+          </div>
+
+          <div class="col-lg-2 ml-auto text-center">
+            <i class="fa fa-twitter fa-3x mb-3 sr-contact" style="color: #1da1f2"></i>
+            <p>bepal_id</p>
+          </div>
+
+          <div class="col-lg-2 ml-auto text-center">
+            <i class="fa fa-whatsapp fa-3x mb-3 sr-contact" style="color: #0dc143"></i>
+            <p>0821-6567-3775</p>
+          </div>
+
+          <div class="col-lg-2 ml-auto text-center">
+            <i class="fa fa-youtube fa-3x mb-3 sr-contact" style="color: #fe0002"></i>
+            <p>0853-7111-8876</p>
+          </div>
+
+          <div class="col-lg-2 ml-auto text-center">
+            <i class="fa fa-instagram fa-3x mb-3 sr-contact" style="color: #dc2d7a"></i>
+            <p>bepal.id</p>
+          </div>
+
+          <div class="col-lg-2 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact" ></i>
+            <p>
+              <a >pobi@bepal.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+      <footer class="footer">
+        <div class="container-fluid">
+          <p class="copyright text-center">
+            &copy;
+            <a href="">Bepal Developer Tim</a>. Nature Call, Raise of Nature
+          </p>
+        </div>
+      </footer>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Form Register Pelajar Bepal</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-4">
+
+                </div>
+                <div class="form-group col-md-4">
+                  <img src="img/logo-2.png">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="nama-depan" placeholder="Nama Depan">
+                </div>
+                <div class="form-group col-md-6">
+                  <input type="text" class="form-control" id="nama-belakang" placeholder="Nama Belakang">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="tanggal-lahir" placeholder="Tanggal Lahir">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="alamat" placeholder="Alamat">
+              </div>
+              <div class="form-group">
+                <div class="btn-group btn-group-lg">
+                  <button id="label-dropdown" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Pilih Kelas
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" onclick="dropdownKlik('programing')">Programing</a>
+                    <a class="dropdown-item" href="#" onclick="dropdownKlik('desain')">Desain</a>
+                    <a class="dropdown-item" href="#" onclick="dropdownKlik('fotographer')">Fotographer</a>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="hobi" placeholder="Hobi">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="confirmSubmit()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--modal loading-->
+    <div class="modal fade" id="myModalLoading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog  modal-small">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-4">
+              </div>
+              <div class="form-group col-md-4">
+                <img src="img/logo-2.png">
+              </div>
+            </div>
+            <div class="row" style="padding-top: 15px;padding-bottom: 15px;">
+              <div class="col-md-4 ">
+              </div>
+              <div class="col-md-4 " >
+                <i class="fa fa-circle-o-notch fa-spin fa-4x fa-fw" style="color:#35C4F0"></i>
+                <span class="sr-only"></span>
+              </div>
+              <div class="col-md-4 ">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBzDgXHQFDXMkXWC20stfP9MCKBzvxYHYM",
+            authDomain: "bepal-indonesia.firebaseapp.com",
+            databaseURL: "https://bepal-indonesia.firebaseio.com",
+            projectId: "bepal-indonesia",
+            storageBucket: "",
+            messagingSenderId: "670273883991"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <script>
+
+        document.getElementById("overlay").style.display = "block";
+        var chechkedDropdown =false;
+        var labelDropdown="";
+
+        $(function() {
+            var i = setInterval(off ,1000);
+            setTimeout(function(){
+                clearInterval(i)
+            },7000);
+        });
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+
+
+        function tampilinModal(){
+            $("#myModal").modal({backdrop: 'static', keyboard: false});
+
+
+        }
+        
+        function dropdownKlik(label) {
+
+            document.getElementById('label-dropdown').innerHTML = label;
+            chechkedDropdown =true;
+            labelDropdown=label;
+        }
+
+        function confirmSubmit() {
+
+
+
+            var namaDepan = document.getElementById('nama-depan').value;
+            var namaBelakang   = document.getElementById('nama-belakang').value;
+            var tanggalLahir   = document.getElementById('tanggal-lahir').value;
+            var alamat   = document.getElementById('alamat').value;
+            var hobi   = document.getElementById('hobi').value;
+
+            console.log(namaDepan);
+            console.log(namaBelakang);
+            console.log(tanggalLahir);
+            console.log(alamat);
+            console.log(hobi);
+            console.log(labelDropdown);
+
+
+            if(namaDepan =="" && namaBelakang=="" && tanggalLahir=="" && alamat=="" && hobi=="" && labelDropdown==""){
+                alert("Tidak boleh ada data yang kosong");
+            }else{
+                $("#myModal").modal("hide")
+                $("#myModalLoading").modal("show");
+                var uid = firebase.database().ref().child('pelajar').push().key;
+                var data = {
+                    namaDepan : namaDepan,
+                    namaBelakang : namaBelakang,
+                    tanggalLahir : tanggalLahir,
+                    alamat : alamat,
+                    hobi: hobi,
+                    kelas : labelDropdown
+                }
+
+                var update = {};
+                update['/pelajar/' + uid] = data;
+                firebase.database().ref().update(update).then(function() {
+
+                    $("#myModalLoading").modal("hide");
+                    alert('terima kasih telah mendaftar');
+                });
+
+            }
+
+        }
+
+
+    </script>
+  </body>
+
+</html>

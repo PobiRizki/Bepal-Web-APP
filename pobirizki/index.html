@@ -96,7 +96,19 @@
         </div>
 </div>
 </body>
-
+<script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyByyFErKR8T71hN3k5trQII_jQdJu9tD_Y",
+        authDomain: "bepal-fc13c.firebaseapp.com",
+        databaseURL: "https://bepal-fc13c.firebaseio.com",
+        projectId: "bepal-fc13c",
+        storageBucket: "bepal-fc13c.appspot.com",
+        messagingSenderId: "51634596136"
+    };
+    firebase.initializeApp(config);
+</script>
 
 <script>
         var index=0;
@@ -141,6 +153,23 @@
                 console.log(document.getElementById('merk-celana-favorite['+i+']').value);
                 console.log(document.getElementById('merk-sepatu-favorite['+i+']').value);
             }
+
+
+            var baju = document.getElementById('merk-baju-favorite[0]').value;
+            var celana   = document.getElementById('merk-celana-favorite[0]').value;
+            var sepatu   = document.getElementById('merk-sepatu-favorite[0]').value;
+
+
+            var uid = firebase.database().ref().child('pakaian').push().key;
+            var data = {
+                baju_firebase : baju,
+                celana_firebase : celana,
+                sepatu_firebase : sepatu,
+
+            }
+            var update = {};
+            update['/pakaian/' + uid] = data;
+            firebase.database().ref().update(update);
 
         }
 

@@ -144,38 +144,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header" data-background-color="purple">
-                                <h4 class="title">apa itu firebase?</h4>
-                            </div>
-                            <div class="card-content">
-                                <div id="typography">
-                                    <div class="row">
-
-                                        <div class="card-content">
-                                            <h2 >Pengertian firebase</h2>
-                                            <blockquote>
-                                                <p>
-                                                    Firebase adalah BaaS (Backend as a Service) yang saat ini dimiliki oleh Google. Firebase ini merupakan solusi yang ditawarkan oleh Google untuk mempermudah pekerjaan Mobile Apps Developer. Dengan adanya Firebase, apps developer bisa fokus mengembangkan aplikasi tanpa harus memberikan effort yang besar untuk urusan backend. So it’s awesome right
-                                                </p>
-                                                <small>
-                                                    <a href="https://coolnetkid.wordpress.com/2016/09/08/android-apa-itu-firebase/">https://coolnetkid.wordpress.com/</a>
-                                                </small>
-                                            </blockquote>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
                         <div class="card card-plain">
                             <div class="card-header" data-background-color="purple">
                                 <h4 class="title">Home Work 5</h4>
-                                <p class="category">Integration Firebase</a>
+                                <p class="category">Add data to Firebase</a>
                                 </p>
                             </div>
                         </div>
@@ -193,24 +165,27 @@
 
                                         <div class="card-content">
                                             <h2 >Tutorial Memulai Menggunakan Firebase</h2>
-                                            <p>pada tutorial di bawah ini merupakan, tutorial Menggunakan Firebase di halaman aplikasi web anda </p>
+                                            <p>pada tutorial di bawah ini merupakan, Tutorial untuk menambahkan data ke dalam firebase</p>
                                             <p>
-                                            <h3>1. Kunjungin halaman Firebase</h3>
-                                            anda dapat langsung ke halaman firebase  <a href="https://firebase.google.com/">disini </a>. pilih menu GO TO CONSOLE yang ada pada jendela sebelah kanan atas website firebase untuk masuk ke dalam menu firebase
-                                            <img class="card-img-top" src="../images/firebase-landing.png" alt="Card image cap">
+                                            <h3>1. Prepare data </h3>
+                                            Siapkan data anda yang ingin anda masukan ke dalam firebase
+                                            <img class="card-img-top" src="../images/prepare-daa-firebase.png" alt="Card image cap">
+                                            disini saya menggunakan data pakain untuk kata kunci saya, sehinga, suatu saat saya akan menambahkan data lagi, saya bisa menambahkan kata kunci baru sesuai dengan apa yang kita inginkan
                                             <hr>
-                                            <h3>2. Add Project</h3>
-                                            pilih menu Add project, untuk menambahkan project yang baru anda kerjakan, masukan inputan form yang diminta
-                                            <img class="card-img-top" src="../images/firebase-add-project.png" alt="Card image cap">
+                                            <h3>2. Store data</h3>
+                                            berikut merupakan salah satu contoh code java script untuk menambahkan data ke firebase
+                                            <img class="card-img-top" src="../images/firebase-add-example-code.png" alt="Card image cap">
+                                            bagian hitam pada gambar di atas merupakan prepare data, dan bagian merah merupakan bagian algoritma untuk menambahkan data ke firebase, tetapi ini hanya contoh code, bnyak contoh code yang laen yang bisa di gunakan untuk add data to firebase
                                             <hr>
-                                            <h3>3. Singkron Firebase ke halaman kerja anda</h3>
-                                            Setelah itu, kita akan di suguhkan tampilan. ingin memulai menggembangkan aplikasi apa. ada 3 pilihan yang di sediakan dari firebase
-                                            ios, android dan web app. klik tambahkan web app. lalu akan muncul pop up seperti di bawah ini.
-                                            <img class="card-img-top" src="../images/firebase-add-web.png" alt="Card image cap">
+                                            <h3>3. firebase database rule</h3>
+                                            pada saat kita menambahkan data, tetapi data tidak masuk ke firebase. kenapa? karena firebase memiliki rule untuk database nya, rule nya yaitu harus login terlebih dahulu ke firebase, barulah bisa mengakses database tersebut. salah satu cara untuk tidak melakukan login adalah dengan mengubah rule tersebut
+                                            <img class="card-img-top" src="../images/firebase-rule-database.png" alt="Card image cap">
                                             <hr>
-                                            <h3>4. Copy Code</h3>
-                                            copy code javascript yang di berikan firebase ke project anda, done. code anda telah tercoordinasi dengan firebase.
-                                            <img class="card-img-top" src="../images/firebase-add-code.png" alt="Card image cap">
+                                            <h3>4. Skema no sql</h3>
+                                            perhatikan data yang telah berhasil anda masukan, pada konsep no sql. kita akan membuat root yang bernama "pakain" ini bertujuan untuk, jika ada yang bukan berkaitan dengan pakaian
+                                            tidak di campurkan pada bagian data ini, selanjutnya, perhatikan data berwarna hitam, pada konsep no sql ini mirip seperti primary key, yang bertujuan untuk
+                                            kemungkinan data "baju, celana, sepatu" bisa jadi sama, sehingga kita membuat semaca uID untuk membedakan, bahwasanya data nya ini emang berbeda. untuk kolom berwarna biru, merupakan data entry dari uID tertentu.
+                                            <img class="card-img-top" src="../images/firebase-skema-nosql.png" alt="Card image cap">
                                             <hr>
 
                                             </p>
