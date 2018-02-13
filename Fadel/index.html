@@ -154,24 +154,24 @@
 
                             <div class="col-md-5 mr-auto">
 
-                                <form class="form" method="" action="">
+
                                     <div class="form-group">
                                         <div class="input-group">
 
-                                            <input type="text" class="form-control" placeholder="Nama Hotel..." >
+                                            <input id="nama-hotel[0]" type="text" class="form-control" placeholder="Nama Hotel" >
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <div class="input-group">
 
-                                            <textarea class="form-control" placeholder="Alamat Hotel" rows="2"></textarea>
+                                            <textarea id="alamat-hotel[0]" class="form-control" placeholder="Alamat Hotel" rows="2"></textarea>
                                         </div>
 
                                         <div class="form-group">
                                             <div class="input-group">
 
-                                                <textarea class="form-control" placeholder="Review Hotel" rows="5"></textarea>
+                                                <textarea id="review-hotel[0]" class="form-control" placeholder="Review Hotel" rows="5"></textarea>
                                             </div>
                                         </div>
 
@@ -185,9 +185,16 @@
                                             </label>
                                         </div>
                                         <div class="text-center">
-                                            <a href="#pablo" class="btn btn-primary btn-round" style="background-color: seagreen;">SUBMIT</a>
+                                            <button  onclick="inputData()" class="btn btn-primary btn-round" style="background-color: seagreen;">SUBMIT</button>
+
                                         </div>
-                                </form>
+                                        <div class="text-center">
+                                            <button onclick="tambahForm()" class="btn btn-primary btn-round" style="background-color: seagreen;">TAMBAH FORM</button>
+
+                                        </div>
+                                        <div id="tambah-form">
+
+                                        </div>
                             </div>
                         </div>
                     </div>
@@ -234,18 +241,11 @@
 </div>
 
 
-
-
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.min.js"></script>
 <script src="../assets/js/core/popper.min.js"></script>
 
-
 <script src="../assets/js/bootstrap-material-design.js"></script>
-
-
-
-
 <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
 <script src="../assets/js/plugins/moment.min.js"></script>
 
@@ -269,12 +269,85 @@
 
 
 
+
 </body>
+
+<script>
+
+    var index = 0;
+    function inputData() {
+        alert("Datanya Masuk");
+        var namaHotel;
+        namaHotel = document.getElementById("nama-hotel").value;
+        console.log(namaHotel);
+
+        var alamatHotel;
+        alamatHotel = document.getElementById("alamat-hotel").value;
+        console.log(alamatHotel);
+
+        var reviewHotel;
+        reviewHotel = document.getElementById("review-hotel").value;
+        console.log(reviewHotel);
+    }
+
+    function tambahForm() {
+        index++;
+        var tambahForm;
+        tambahForm = document.createElement('div');
+        tambahForm.innerHTML = "<div class=\"col-md-5 mr-auto\">\n" +
+            "\n" +
+            "\n" +
+            "                                    <div class=\"form-group\">\n" +
+            "                                        <div class=\"input-group\">\n" +
+            "\n" +
+            "                                            <input id=\"nama-hotel["+index+"]\" type=\"text\" class=\"form-control\" placeholder=\"Nama Hotel\" >\n" +
+            "                                        </div>\n" +
+            "                                    </div>\n" +
+            "\n" +
+            "                                    <div class=\"form-group\">\n" +
+            "                                        <div class=\"input-group\">\n" +
+            "\n" +
+            "                                            <textarea id=\"alamat-hotel[\"+index+\"]\" class=\"form-control\" placeholder=\"Alamat Hotel\" rows=\"2\"></textarea>\n" +
+            "                                        </div>\n" +
+            "\n" +
+            "                                        <div class=\"form-group\">\n" +
+            "                                            <div class=\"input-group\">\n" +
+            "\n" +
+            "                                                <textarea id=\"review-hotel[\"+index+\"]\" class=\"form-control\" placeholder=\"Review Hotel\" rows=\"5\"></textarea>\n" +
+            "                                            </div>\n" +
+            "                                        </div>\n" +
+            "\n" +
+            "                                        <div class=\"form-check\">\n" +
+            "                                            <label class=\"form-check-label\">\n" +
+            "                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"\" checked>\n" +
+            "                                                <span class=\"form-check-sign\">\n" +
+            "\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"check\"></span>\n" +
+            "\t\t\t\t\t\t\t\t\t\t\t\t</span>\n" +
+            "                                                I agree to the <a href=\"#something\">terms and conditions</a>.\n" +
+            "                                            </label>\n" +
+            "                                        </div>\n" +
+            "                                        <div class=\"text-center\">\n" +
+            "                                            <button onclick=\"inputData()\" class=\"btn btn-primary btn-round\" style=\"background-color: seagreen;\">SUBMIT</button>\n" +
+            "\n" +
+            "                                        </div>\n" +
+            "                                        <div class=\"text-center\">\n" +
+            "                                            <button onclick=\"tambahForm()\" class=\"btn btn-primary btn-round\" style=\"background-color: seagreen;\">TAMBAH FORM</a>\n" +
+            "\n" +
+            "                                        </div>\n" +
+            "                                        <div id=\"tambah-form\">\n" +
+            "                                            \n" +
+            "                                        </div>\n" +
+            "                            </div>\n" +
+            "                        </div>";
+        document.getElementById('tambah-form').appendChild(tambahForm);
+
+    }
+</script>
 
 </html>
 
-
 </div>
+
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.min.js"></script>
 <script src="../assets/js/core/popper.min.js"></script>
