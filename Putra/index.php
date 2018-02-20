@@ -6,7 +6,7 @@
     <!--<link rel="stylesheet" href="css/showhide.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <script>
+    <!--<script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
   $("a").on('click', function(event) {
@@ -31,7 +31,7 @@ $(document).ready(function(){
     } // End if
   });
 });
-</script>  
+</script>  -->
 </head>
     
 <body>
@@ -108,32 +108,12 @@ $(document).ready(function(){
                 <span style="color:#1abc9c ; font-size: 2rem; font-weight : bold;">FORMULIR PENERIMAAN KARYAWAN BOSSLOKER</span>
             </h1>
         </div>
-        <form method="post" action="#">
-            <!--<input id="type" type = "hidden" value = "Login" name="type" required>
-            <div class="field" style="margin-top: 20px; margin-left : 200px; margin-right: 200px;">
-                <input onkeypress="return /\d/.test(String.fromCharCode(((event||window.event).which||(event||window.event).which)));" class="input" type="text" name="IDPLY" placeholder="ID PLAYER" minlength="18" maxlength="18">
-            </div>
-
-            <div class="field" style="margin-left : 200px; margin-right: 200px;" required>
-                <input class="input" type="password" name="password" placeholder="Password">
-            </div>
-
-
-
-            <div class="field" style=" margin-left : 200px; margin-right: 200px;">
-                <input class="button is-primary" type="submit" value="LOGIN" name="submit">
-            </div>
-
-            <div class="field" style=" margin-left : 200px; margin-right: 200px;">
-                <label class="label">
-                    Belum Punya Akun? <a href="#daftar">Daftar Disini</a>
-                </label>
-            </div>-->
+        <form>
 
             <div class="field" style=" margin-left : 200px; margin-right: 200px;">
               <label class="label">Name</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="Contoh : Putra Arifah">
+                    <input class="input" type="text" id="ContohNama" placeholder="Contoh : Putra Arifah">
                 </div>
             </div>
             
@@ -195,18 +175,26 @@ $(document).ready(function(){
 
             <div class="field is-grouped" style=" margin-left : 200px; margin-right: 200px;">
               <div class="control">
-                <button class="button is-primary">Daftar</button>
+                <button class="button is-primary">Tambah</button>
               </div>
               <div class="control">
-                <button class="button is-text">Batal</button>
+                <button type="submit" class="button is-text" onclick="TakeNama()">Submit</button>
               </div>
             </div>
 
         </form>
     </div>
     
-</body>
+    <script>
+      function TakeNama(){
+          $var = document.getElementById("ContohNama").value;
+      }
+    </script>
     
+</body>
+
+
+
 <footer class="footer">
   <?php include 'footer.php' ?>
 </footer>
