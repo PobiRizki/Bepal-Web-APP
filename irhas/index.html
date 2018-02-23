@@ -21,6 +21,21 @@
     <link href="./assets/assets-for-demo/vertical-nav.css" rel="stylesheet" />
 </head>
 
+
+<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyB-poHleAN3qd90bEr9tyHWKdSESewFacc",
+        authDomain: "projek-kr13.firebaseapp.com",
+        databaseURL: "https://projek-kr13.firebaseio.com",
+        projectId: "projek-kr13",
+        storageBucket: "projek-kr13.appspot.com",
+        messagingSenderId: "624443604184"
+    };
+    firebase.initializeApp(config);
+</script>
+
 <body class="signup-page ">
         <nav class="navbar  navbar-transparent    navbar-absolute  navbar-expand-lg "  color-on-scroll="100"  id="sectionsNav">
 
@@ -105,24 +120,24 @@
 
 								<div class="col-md-5 mr-auto">
 									
-									<form class="form" method="" action="">
+									<!--<form class="form" method="" action="">-->
 										<div class="form-group">
 											<div class="input-group">
 												
-												<input type="text" class="form-control" placeholder="Nama Produk..." >
+												<input id="namaproduk" type="text" class="form-control" placeholder="Nama Produk..." >
 											</div>
 										</div>
 
 										<div class="form-group">
 											<div class="input-group">
 												
-												<textarea class="form-control" placeholder="Bahan Baku Produk : ..." rows="5"></textarea>
+												<textarea id="bahanbakuproduk" class="form-control" placeholder="Bahan Baku Produk : ..." rows="5"></textarea>
 										</div>
 
 										<div class="form-group">
 											<div class="input-group">
 												
-												<textarea class="form-control" placeholder="Proses Produksi : ..." rows="5"></textarea>
+												<textarea id="prosesproduksi" class="form-control" placeholder="Proses Produksi : ..." rows="5"></textarea>
 											</div>
 										</div>
 
@@ -135,10 +150,19 @@
 												I agree to the <a href="#something">terms and conditions</a>.
 											</label>
 										</div>
-										<div class="text-center">
-											<a href="#pablo" class="btn btn-primary btn-round" style="background-color: seagreen;">SUBMIT</a>
-										</div>
-									</form>
+                                            <div class="text-center">
+                                                <button  onclick="submitData()" class="btn btn-primary btn-round" style="background-color: seagreen;">SUBMIT</button>
+
+                                            </div>
+                                            <div class="text-center">
+                                                <button onclick="tambahForm()" class="btn btn-primary btn-round" style="background-color: seagreen;">TAMBAH FORM</button>
+
+                                            </div>
+                                            <div id="tambah-form">
+
+                                            </div>
+
+									<!--</form>-->
 								</div>
 							</div>
 						</div>
@@ -221,6 +245,30 @@
 
         
     </body>
+<script>
+    function submitData() {
+        console.log(document.getElementById('namaproduk').value);
+        console.log(document.getElementById('bahanbakuproduk').value);
+        console.log(document.getElementById('prosesproduksi').value);
+
+
+        var produk = document.getElementById('namaproduk').value;
+        var bahan = document.getElementById('bahanbakuproduk').value;
+        var proses = document.getElementById('prosesproduksi').value;
+
+        var uid = firebase.database().ref().child('makanan').push().key;
+        var data = {
+            produk_firebase: produk,
+            bahan_firebase: bahan,
+            proses_firebase: proses,
+
+        }
+        var update = {};
+        update['/makanan/' + uid] = data;
+        firebase.database().ref().update(update);
+
+    }
+</script>
 
 </html>
                                          
