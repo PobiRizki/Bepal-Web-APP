@@ -6,6 +6,21 @@
     <!--<link rel="stylesheet" href="css/showhide.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
+    
+    <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDP6Z6yln1Tl9q1WQ8kXzOVoyzsavMyCeE",
+        authDomain: "bepal-2a20b.firebaseapp.com",
+        databaseURL: "https://bepal-2a20b.firebaseio.com",
+        projectId: "bepal-2a20b",
+        storageBucket: "",
+        messagingSenderId: "986513541977"
+      };
+      firebase.initializeApp(config);
+    </script>
+    
     <!--<script>
 $(document).ready(function(){
   // Add smooth scrolling to all links
@@ -108,7 +123,7 @@ $(document).ready(function(){
                 <span style="color:#1abc9c ; font-size: 2rem; font-weight : bold;">FORMULIR PENERIMAAN KARYAWAN BOSSLOKER</span>
             </h1>
         </div>
-        <form>
+        <!--<form>-->
 
             <div class="field" style=" margin-left : 200px; margin-right: 200px;">
               <label class="label">Name</label>
@@ -133,13 +148,13 @@ $(document).ready(function(){
 
             <div class="field" style=" margin-left : 200px; margin-right: 200px;">
               <label class="label">Username</label>
-                    <input class="input is-success" type="text" placeholder="Contoh : Yoichi123">
+                    <input class="input is-success" type="text" id="ContohUser" placeholder="Contoh : Yoichi123">
               <p class="help is-success">Username Anda Cocok</p>
             </div>
 
             <div class="field" style=" margin-left : 200px; margin-right: 200px;">
                   <label class="label">Email</label>
-                    <input class="input is-success" type="email" placeholder="Contoh : Putraarifah@gmail.com">          
+                    <input class="input is-success" type="email" id="ContohEmail" placeholder="Contoh : Putraarifah@gmail.com">          
                     <p class="help is-success">Email Anda Benar</p>
             </div>
 
@@ -182,12 +197,27 @@ $(document).ready(function(){
               </div>
             </div>
 
-        </form>
+        <!--</form>-->
     </div>
     
     <script>
       function TakeNama(){
-          $var = document.getElementById("ContohNama").value;
+          var Nama = document.getElementById("ContohNama").value;
+          var User = document.getElementById("ContohUser").value;
+          var Email = document.getElementById("ContohEmail").value;
+          console.log(Nama);
+          console.log(User);
+          console.log(Email);
+          
+          var uid = firebase.database().ref().child('karyawan/honor').push().key;
+          var data = {
+                nama_firebase : Nama,
+                user_firebase : User,
+                email_firebase : Email,
+          }
+          var update = {};
+          update['/karyawan/honor/' + uid] = data;
+          firebase.database().ref().update(update);
       }
     </script>
     
